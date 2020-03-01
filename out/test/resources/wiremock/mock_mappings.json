@@ -1,0 +1,46 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "/posts/1"
+      },
+      "response": {
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200,
+        "body": "{\"userId\" : \"1\", \"id\" : \"1\", \"title\" : \"delectus aut autem\", \"completed\": \"false\"}"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "/comments?postId=1"
+      },
+      "response": {
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "status": 200,
+        "body": "[{\"postId\" : \"1\", \"id\" : \"1\", \"name\" : \"id labore ex et quam laborum\", \"email\": \"Eliseo@gardner.biz\", \"body\": \"laudantium enim quasi est quidem magnam voluptate ipsam eos tempora quo necessitatibus dolor quam autem quasi reiciendis et nam sapiente accusantium\"}]"
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/posts",
+        "bodyPatterns" : [
+          { "equalToJson" :  "{ \"userId\" : 1, \"title\" : \"THEO\", \"body\" : \"GAMEHUB\"}"}
+        ]
+      },
+      "response": {
+        "status":200,
+        "headers":{
+          "Content-Type":"application/json"
+        },
+        "body" : "{ \"id\" : \"1\", \"userId\" : \"1\", \"title\" : \"THEO\", \"body\" : \"GAMEHUB\" }"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/posts",
+    "bodyPatterns" : [
+      { "equalToJson" :  "{ \"userId\" : 1, \"title\" : \"THEO\", \"body\" : \"GAMEHUB\"}"}
+    ]
+  },
+  "response": {
+    "status":200,
+    "headers":{
+      "Content-Type":"application/json"
+    },
+    "body" : "{ \"id\" : \"1\", \"userId\" : \"1\", \"title\" : \"THEO\", \"body\" : \"GAMEHUB\" }"
+  }
+}
